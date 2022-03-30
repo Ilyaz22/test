@@ -1,5 +1,17 @@
 <h1>Questions</h1>
-
+<nav>
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+  </ul>
+</nav>
 
 <%= @questions.each do |question| %>
+<% end %>
+
+<p>Questions<p>
+
+<% @questions.each do |question| %>
+
+<p><%= question.title %></p>
+<p><%= question.body %></p>
 <% end %>
