@@ -1,0 +1,13 @@
+<%= form_with model: @question do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, minlength: 2, placeholder: "Title1" %> <!-- required - не пустой проверка на стороне клиента -->
+  </div>  
+
+  <div>
+    <%= f.label :body %>  <!-- надпись перед формой -->
+    <%= f.text_area :body, required: true, minlength: 2, placeholder: "Body1" %>
+  </div>  <!-- area дает большое поле ввода -->
+
+  <%= f.submit "Submit question" %>
+<% end %>
