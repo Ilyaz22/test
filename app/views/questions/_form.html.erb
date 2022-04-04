@@ -1,4 +1,7 @@
 <!-- form это паршал -->
+<% render 'errors' , object: @question %>
+<!-- object в этом паршеле принимает значение @question -->
+
 <%= form_with model: @question do |f| %>
   <div>
     <%= f.label :title %>

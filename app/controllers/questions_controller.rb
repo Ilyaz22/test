@@ -1,5 +1,9 @@
 class QuestionsController < ApplicationController
 
+  def show
+    @question = Question.find_by id: params[:id]
+  end
+
   def destroy
     @question = Question.find_by id: params[:id]
     @question.destroy
@@ -8,7 +12,6 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find_by id: params[:id] #1-ый id: это поле по которому поиск
-    
   end
 
 

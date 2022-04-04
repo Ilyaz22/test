@@ -1,0 +1,10 @@
+<% if object.errors.full_messages.any? #object принимает значение @question %>
+  <div>
+    <ul>
+      <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<!-- при непрохождении валидаций данных на сервере выведет ошибки над формой -->

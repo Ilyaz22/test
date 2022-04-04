@@ -13,6 +13,7 @@
 <% @questions.each do |question| %>
 
 <p><%= question.title %> <%= question.body %> индекс <%= question.id %></p>
+<p><%= link_to 'Show', question_path(question.id) %></p>
 <p><%= link_to 'Edit', edit_question_path(question.id) %></p>
 <p><%= link_to 'Destroy?',question_path(question.id), data: {method: :delete, confirm:'точно?'}%></p>
 <p><%# link_to 'Edit', controller: "questions", action: "edit", id: question %></p>
