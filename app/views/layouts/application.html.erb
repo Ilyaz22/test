@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Question', questions_path %></li>
+      </ul>
+  </nav>
+
+  <main>
+    <% flash.each do |k,v| %>  <!-- позволяет показывать текст из хеша у флеша контроллера -->
+      <%= k.to_s + " " + v %>
+    <% end %>
+  </main>
+
     <%= yield %>
   </body>
 </html>

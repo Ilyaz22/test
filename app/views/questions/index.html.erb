@@ -1,9 +1,6 @@
 <h1>Questions</h1>
-<nav>
-  <ul>
-    <li><%= link_to 'Home', root_path %></li>
-  </ul>
-</nav>
+  <p><li><%= link_to 'New question', new_question_path %></li></p>
+
 
 <%= @questions.each do |question| %>
 <% end %>
