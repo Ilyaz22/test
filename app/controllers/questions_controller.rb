@@ -1,9 +1,10 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_question, only: %i[show destroy edit update] #запускается первым
+  before_action :set_question!, only: %i[show destroy edit update] #запускается первым
 
   def show
-
+    @answer = @question.answers.build #привязываем образец класса answer, который будет
+    # привязан к нашему вопросу
   end
 
   def destroy
@@ -56,7 +57,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:title, :body) # даем разр на заполн опр полей
   end
 
-  def set_question
+  def set_question!
 
   #@question = Question.find_by id: params[:id]#1-ый id: это поле по которому поиск
   @question = Question.find params[:id] # если указан несущ id, то в главн контр обр ошибка

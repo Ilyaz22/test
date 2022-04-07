@@ -8,3 +8,25 @@
   <br>
   <%= @question.body %>
 </p>
+
+
+<p><%= link_to 'Show', question_path(@question.id) %></p>
+<p><%= link_to 'Edit', edit_question_path(@question.id) %></p>
+<p><%= link_to 'Destroy?',question_path(@question.id), data: {method: :delete, confirm:'точно?'}%></p>
+
+
+<h2> Write your answer </h2>
+
+<%= render 'questions/errors' , object: @answer %>
+
+<%= form_with model: [@question, @answer] do |f| %>
+
+  <%= f.label :body%>
+  <%= f.text_area :body %>
+  <%= f.submit "Submit answer!" %>
+
+
+
+<% end %>
+
+<%= @answer.inspect %>
