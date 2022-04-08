@@ -21,12 +21,41 @@
 
 <%= form_with model: [@question, @answer] do |f| %>
 
-  <%= f.label :body%>
+  <%= f.label :body %>
   <%= f.text_area :body %>
   <%= f.submit "Submit answer!" %>
 
 
+<% end %>
+
+<% @answers.each do |answer| %>
+  <time datetime="<%= answer.formatted_created_at %>">
+    <br>
+    <%= answer.formatted_created_at %> <!-- formatted_created_at это метод из модели -->
+  </time>
+
+  <p>
+    <%= answer.body %>
+  </p>
+
+
+  <%= link_to 'Удалить?' , question_answer_path(@question, answer),
+   data: {method: :delete, confirm: "вы уверенны?" } %>
+
+  <br>
+  <br>
 
 <% end %>
 
-<%= @answer.inspect %>
+
+
+
+
+
+
+
+
+
+
+
+<!--<%# @answer.inspect %> -->

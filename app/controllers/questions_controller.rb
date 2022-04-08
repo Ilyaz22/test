@@ -5,6 +5,8 @@ class QuestionsController < ApplicationController
   def show
     @answer = @question.answers.build #привязываем образец класса answer, который будет
     # привязан к нашему вопросу
+
+    @answers = Answer.order created_at: :desc #сортировка по убыванию
   end
 
   def destroy
