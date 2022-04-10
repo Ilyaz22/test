@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'questions#index'
 
   resources :questions  do
-    resources :answers
+    resources :answers , expect: %i[new show] # кроме этих маршрутов
   end
 
 end
